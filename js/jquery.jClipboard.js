@@ -20,12 +20,9 @@
         if (typeof params == "object" && !params.length) {
 
             var settings = $.extend({
-                path: 'js/jClipboard10.swf',
-                type: 'text',
+                path: 'js/jClip.swf',
                 copy: null,
-                beforeCopy: null,
-                afterCopy: null,
-                clickAfter: true,
+                success: null,
                 setHandCursor: true
             }, params);
 
@@ -57,9 +54,6 @@
                 o.parent().append(embed);
 
                 o.on("copyHTML",function(){
-                    if($.isFunction(settings.beforeCopy)){
-                        settings.beforeCopy();
-                    }
 
                     if($.isFunction(settings.copy)){
                         htmlText = settings.copy();
@@ -88,8 +82,8 @@
                 });
 
                 o.on("success",function(content){
-                    if($.isFunction(settings.afterCopy)){
-                        settings.afterCopy(content);
+                    if($.isFunction(settings.success)){
+                        settings.success(content);
                     }
                 });
             });

@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title>Zero Clipboard Test</title>
+	<style type="text/css">
+		body { font-family:arial,sans-serif; font-size:9pt; }
+		
+				.clip_button { width:150px; text-align:center; border:1px solid black; background-color:#ccc; margin:10px; padding:10px; cursor:default; font-size:9pt; }
+				.clip_button.hover { background-color:#eee; }
+				.clip_button.active { background-color:#aaa; }
+	</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.zclip.js"></script>
+	<script type="text/javascript">
+		function sayanything(){
+			return "hello";
+		}
+		$(document).ready(function(){
+
+		    $('a.copy').zclip({
+		        path:'ZeroClipboard11.swf',
+		        copy:function(){
+			        console.log($('textarea#fe_text').val());
+			        return $('textarea#fe_text').val();
+			    }
+		    });
+		    // The link with ID "copy-description" will copy
+		    // the text of the paragraph with ID "description"
+		    /*$('a.copyRich').zclip({
+		        path:'ZeroClipboard11.swf',
+		        copy:function(){
+		        	console.log($('div#richCopy').html());
+			        return $('div#richCopy').html();
+			    }
+		    });*/
+		    // The link with ID "copy-dynamic" will copy the current value
+		    // of a dynamically changing input with the ID "dynamic"
+		});
+	</script>
+</head>
+<body">
+	<h1>Zero Clipboard Test</h1>
+	<p><script>document.write("Your browser: " + navigator.userAgent);</script></p>
+	<table width="100%">
+		<tr>
+			<td width="50%" valign="top">
+				<!-- Upload Form -->
+				<table>
+					<tr>
+						<td align="right"><b>Text:</b></td>
+						<td align="left"><textarea id="fe_text" cols=50 rows=5">Copy me!</textarea>
+						<div id="richCopy">
+							<h1><i>Hello There!</i></h1>
+						</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div id="clip_container" style="position:relative">
+					<a href="#" class="copy">Copy Plaintext</a>
+					<a href="#" class="copyRich">Copy RichText</a>
+				</div>
+			</td>
+			<td width="50%" valign="top">
+				<!-- Debug Console -->
+				<div id="d_debug" style="border:1px solid #aaa; padding: 10px; font-size:9pt;">
+					<h3>Debug Console:</h3>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	<br/><br/>
+	You can paste text here if you want, to make sure it worked:<br/>
+	<textarea id="testarea" cols=50 rows=10></textarea><br/>
+	<input type=button value="Clear Test Area" onClick="$('testarea').value = '';"/>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="jquery.zclip.js"></script>
+
+
+
+</body>
+</html>

@@ -14,7 +14,9 @@ Requires Flash 10.  Sorry.
 	<script type="text/javascript" src="jquery.zclip.js"></script>
 
 ###Usage
+
 Activate jClipboard on the element that you'd like to use as your copy button.
+
 	$('a.copy').jclip({
 		path:'js/jClip10.swf',
 		copy:function(){
@@ -23,7 +25,8 @@ Activate jClipboard on the element that you'd like to use as your copy button.
 	)};
 
 We accept some other parameters too.  Here's a full list:
-*   `path`: Path to the jClipboard .SWF file.  Defaults to `js/jClip10.swf`
-*   `copy`: Tells jClip what text or elements to copy.  Accepts strings, jQuery objects, DOM Elements, and functions.
-*   `success`: Callback function executed after text has been copied.  Accepts one parameter containing the text that was copied.
-*   `setHandCursor`: Set to `false` if you do not wish to use a pointer cursor over your copy button.  Defaults to `true`.
+
+ * `path`: Path to the jClipboard .SWF file.  Defaults to `js/jClip10.swf`
+ * `copy`: Tells jClip what text or elements to copy.  Accepts strings, jQuery objects, DOM Elements, and functions.
+ * `success`: Callback function executed after text has been copied.  Accepts one parameter containing the text that was copied.
+ * `setHandCursor`: Set to `false` if you do not wish to use a pointer cursor over your copy button.  Defaults to `true`.

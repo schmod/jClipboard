@@ -10,6 +10,7 @@ Requires Flash 10.  Sorry.
 
 ###Installation
 [Download jClipboard](https://github.com/schmod/jClipboard/tarball/master), extract somewhere into your site, and include jQuery and jClipboard in your page
+
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.zclip.js"></script>
 

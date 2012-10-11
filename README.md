@@ -17,13 +17,14 @@ Requires Flash 10.  Sorry.
 ###Usage
 
 Activate jClipboard on the element that you'd like to use as your copy button.
-
-	$('a.copy').jclip({
-		path:'js/jClip10.swf',
-		copy:function(){
-			return $('textarea#myText').val();
+````javascript
+$('a.copy').jclip({
+	path:'js/jClip10.swf',
+	copy:function(){
+		return $('textarea#myText').val();
 		}
-	)};
+)};
+````
 
 We accept some other parameters too.  Here's a full list:
 
